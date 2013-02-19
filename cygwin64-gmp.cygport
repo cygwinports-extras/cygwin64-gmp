@@ -1,0 +1,24 @@
+CROSS_HOST="x86_64-pc-cygwin"
+inherit cross
+
+NAME="cygwin64-gmp"
+VERSION=5.1.1
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GNU MP library for Cygwin 64bit toolchain"
+DESCRIPTION=
+HOMEPAGE="http://gmplib.org/"
+SRC_URI="ftp://ftp.gmplib.org/pub/gmp-${VERSION}/gmp-${VERSION}.tar.xz"
+SRC_DIR="gmp-${VERSION}"
+PATCH_URI="5.1.1-libtool2.patch"
+
+CYGCONF_ARGS="--enable-cxx"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -fr ${D}${CROSS_DATADIR}/info/
+}
+
+KEEP_LA_FILES="none"
