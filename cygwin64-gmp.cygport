@@ -3,7 +3,7 @@ inherit cross
 
 NAME="cygwin64-gmp"
 VERSION=5.1.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="GNU MP library for Cygwin 64bit toolchain"
 DESCRIPTION=
